@@ -43,6 +43,20 @@ docker run -d --name cs1 poklet/cassandra
 docker run -d -P --name mytitan --link es1:elasticsearch --link cs1:cassandra apobbati/titan-rexster
 ```
 
+### Ports
+
+8182: HTTP port for REST API
+8183: RexPro for native access (Binary protocol)
+8184: JMX Port (You won't need to use this, probably)
+
+You can read more about it in the Rexster documentation.
+
+To test out the REST API (over Boot2docker):
+
+```
+curl http://localhost:<port-mapped-to-8182>/graphs/graph/vertices
+```
+
 ## Dependencies
 
 I've tested this container with the following containers:
@@ -58,3 +72,4 @@ In the near future, I'd like to add support for:
 	- External volumes for persistent data.
 	- Security between Titan and its backends.
 	- Example application stack integrating with Titan.
+
