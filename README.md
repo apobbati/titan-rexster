@@ -70,6 +70,7 @@ I've tested this container with the following containers:
 ## Roadmap
 
 In the near future, I'd like to add support for:
+
 	- Scaling/Clustering Cassandra and ElasticSearch backends.
 	- External volumes for persistent data.
 	- Security between Titan and its backends.
