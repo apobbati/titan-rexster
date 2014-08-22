@@ -46,7 +46,9 @@ docker run -d -P --name mytitan --link es1:elasticsearch --link cs1:cassandra ap
 ### Ports
 
 8182: HTTP port for REST API
+
 8183: RexPro for native access (Binary protocol)
+
 8184: JMX Port (You won't need to use this, probably)
 
 You can read more about it in the Rexster documentation.
