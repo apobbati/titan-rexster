@@ -35,6 +35,8 @@ elegance to query graphs.
 
 ## Running
 
+The minimum system requirements for this stack is 1 GB with 2 cores.
+
 ```
 docker run -d --name es1 dockerfile/elasticsearch
 docker run -d --name cs1 poklet/cassandra
