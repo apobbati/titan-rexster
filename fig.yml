@@ -1,0 +1,19 @@
+es1:
+  image: dockerfile/elasticsearch
+
+cs1:
+  image: poklet/cassandra
+
+tr1:
+  image: apobbati/titan-rexster
+  links:
+   - es1:elasticsearch
+   - cs1:cassandra
+  ports:
+   - 8182:8182
+   - 8183:8183
+   - 8184:8184
+
+#docker run -d --name es1 dockerfile/elasticsearch
+#docker run -d --name cs1 poklet/cassandra
+#docker run -d -P --name tr1 --link es1:elasticsearch --link cs1:cassandra apobbati/titan-rexster
