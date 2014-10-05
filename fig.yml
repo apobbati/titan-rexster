@@ -1,11 +1,17 @@
 es1:
   image: dockerfile/elasticsearch
-
+  ports:
+   - 9200:9200
+   - 9300:9300
+  volumes:
+   - data/:/data
 cs1:
   image: poklet/cassandra
-
+  ports:
+   - 9160:9160
+   - 9042:9042
 tr1:
-  image: apobbati/titan-rexster
+  image: closedloop/titan-rexster
   links:
    - es1:elasticsearch
    - cs1:cassandra

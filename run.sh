@@ -57,5 +57,15 @@ wait_for_startup Cassandra \
 	return 1
 }
 
+echo "ES PORT"
+echo  $ELASTICSEARCH_PORT_9200_TCP_ADDR
+echo  $ELASTICSEARCH_PORT_9200_TCP_PORT
+
+#start titan
+#$BIN/titan.sh -c cassandra-es start ../$OUT 
+
+# start rexster (original)
 $BIN/rexster.sh -s -c ../$OUT
 
+# start the console
+#$BIN/rexster-console.sh
