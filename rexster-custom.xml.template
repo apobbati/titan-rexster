@@ -50,10 +50,9 @@
     <script-engines>
         <script-engine>
             <name>gremlin-groovy</name>
-            <reset-threshold>-1</reset-threshold>
-            <init-scripts>config/init.groovy</init-scripts>
-            <imports>com.tinkerpop.rexster.client.*</imports>
-            <static-imports>java.lang.Math.PI</static-imports>
+            <reset-threshold>500</reset-threshold>
+            <imports>com.tinkerpop.gremlin.*,com.tinkerpop.gremlin.java.*,com.tinkerpop.gremlin.pipes.filter.*,com.tinkerpop.gremlin.pipes.sideeffect.*,com.tinkerpop.gremlin.pipes.transform.*,com.tinkerpop.blueprints.*,com.tinkerpop.blueprints.impls.*,com.tinkerpop.blueprints.impls.tg.*,com.tinkerpop.blueprints.impls.neo4j.*,com.tinkerpop.blueprints.impls.neo4j.batch.*,com.tinkerpop.blueprints.impls.neo4j2.*,com.tinkerpop.blueprints.impls.neo4j2.batch.*,com.tinkerpop.blueprints.impls.orient.*,com.tinkerpop.blueprints.impls.orient.batch.*,com.tinkerpop.blueprints.impls.dex.*,com.tinkerpop.blueprints.impls.rexster.*,com.tinkerpop.blueprints.impls.sail.*,com.tinkerpop.blueprints.impls.sail.impls.*,com.tinkerpop.blueprints.util.*,com.tinkerpop.blueprints.util.io.*,com.tinkerpop.blueprints.util.io.gml.*,com.tinkerpop.blueprints.util.io.graphml.*,com.tinkerpop.blueprints.util.io.graphson.*,com.tinkerpop.blueprints.util.wrappers.*,com.tinkerpop.blueprints.util.wrappers.batch.*,com.tinkerpop.blueprints.util.wrappers.batch.cache.*,com.tinkerpop.blueprints.util.wrappers.event.*,com.tinkerpop.blueprints.util.wrappers.event.listener.*,com.tinkerpop.blueprints.util.wrappers.id.*,com.tinkerpop.blueprints.util.wrappers.partition.*,com.tinkerpop.blueprints.util.wrappers.readonly.*,com.tinkerpop.blueprints.oupls.sail.*,com.tinkerpop.blueprints.oupls.sail.pg.*,com.tinkerpop.blueprints.oupls.jung.*,com.tinkerpop.pipes.*,com.tinkerpop.pipes.branch.*,com.tinkerpop.pipes.filter.*,com.tinkerpop.pipes.sideeffect.*,com.tinkerpop.pipes.transform.*,com.tinkerpop.pipes.util.*,com.tinkerpop.pipes.util.iterators.*,com.tinkerpop.pipes.util.structures.*,org.apache.commons.configuration.*,com.thinkaurelius.titan.core.*,com.thinkaurelius.titan.core.attribute.*,com.thinkaurelius.titan.core.log.*,com.thinkaurelius.titan.core.olap.*,com.thinkaurelius.titan.core.schema.*,com.thinkaurelius.titan.core.util.*,com.thinkaurelius.titan.example.*,org.apache.commons.configuration.*,com.tinkerpop.gremlin.Tokens.T,com.tinkerpop.gremlin.groovy.*</imports>
+            <static-imports>com.tinkerpop.blueprints.Direction.*,com.tinkerpop.blueprints.TransactionalGraph$Conclusion.*,com.tinkerpop.blueprints.Compare.*,com.thinkaurelius.titan.core.attribute.Geo.*,com.thinkaurelius.titan.core.attribute.Text.*,com.tinkerpop.blueprints.Query$Compare.*</static-imports>
         </script-engine>
     </script-engines>
     <security>
@@ -94,21 +93,23 @@
             <graph-type>com.thinkaurelius.titan.tinkerpop.rexster.TitanGraphConfiguration</graph-type>
             <graph-read-only>false</graph-read-only>
             <properties>
-                <storage.backend>cassandrathrift</storage.backend> 
+                <storage.backend>cassandrathrift</storage.backend>
                 <storage.hostname>_CASSANDRA_HOSTNAME_</storage.hostname>
-                <storage.port>_CASSANDRA_TCP_PORT_</storage.port> <!-- Cassandra Thrift Port -->
+                <storage.port>_CASSANDRA_TCP_PORT_</storage.port>
                 <cache.db-cache>true</cache.db-cache>
                 <cache.db-cache-clean-wait>20</cache.db-cache-clean-wait>
                 <storage.index.search.backend>elasticsearch</storage.index.search.backend>
                 <storage.index.search.hostname>_ELASTICSEARCH_HOSTNAME_</storage.index.search.hostname>
-                <storage.index.search.port>_ELASTICSEARCH_TCP_PORT_</storage.index.search.port> <!-- ES REST Port -->
+                <storage.index.search.port>_ELASTICSEARCH_TCP_PORT_</storage.index.search.port>
                 <storage.index.search.client-only>true</storage.index.search.client-only>
+                <storage.index.search.local-mode>false</storage.index.search.local-mode>
             </properties>
             <extensions>
                 <allows>
                     <allow>tp:gremlin</allow>
                 </allows>
             </extensions>
-        </graph>    
+        </graph>
     </graphs>
 </rexster>
+

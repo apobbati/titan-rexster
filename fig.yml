@@ -1,5 +1,5 @@
 es1:
-  image: dockerfile/elasticsearch
+  image: closedloop/elasticsearch:0.90.3
   ports:
    - 9200:9200
    - 9300:9300
@@ -10,6 +10,10 @@ cs1:
   ports:
    - 9160:9160
    - 9042:9042
+   - 7000:7000
+   - 7001:7001
+   - 7199:7199
+   - 8012:8012
 tr1:
   image: closedloop/titan-rexster
   links:
