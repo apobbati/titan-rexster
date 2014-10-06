@@ -1,0 +1,29 @@
+es1:
+  image: closedloop/elasticsearch:0.90.3
+  ports:
+   - 9200:9200
+   - 9300:9300
+  volumes:
+   - data/:/data
+cs1:
+  image: poklet/cassandra
+  ports:
+   - 9160:9160
+   - 9042:9042
+   - 7000:7000
+   - 7001:7001
+   - 7199:7199
+   - 8012:8012
+tr1:
+  image: closedloop/titan-rexster
+  links:
+   - es1:elasticsearch
+   - cs1:cassandra
+  ports:
+   - 8182:8182
+   - 8183:8183
+   - 8184:8184
+
+#docker run -d --name es1 dockerfile/elasticsearch
+#docker run -d --name cs1 poklet/cassandra
+#docker run -d -P --name tr1 --link es1:elasticsearch --link cs1:cassandra apobbati/titan-rexster
