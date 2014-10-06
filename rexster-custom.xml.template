@@ -98,11 +98,12 @@
                 <storage.port>_CASSANDRA_TCP_PORT_</storage.port>
                 <cache.db-cache>true</cache.db-cache>
                 <cache.db-cache-clean-wait>20</cache.db-cache-clean-wait>
-                <storage.index.search.backend>elasticsearch</storage.index.search.backend>
-                <storage.index.search.hostname>_ELASTICSEARCH_HOSTNAME_</storage.index.search.hostname>
-                <storage.index.search.port>_ELASTICSEARCH_TCP_PORT_</storage.index.search.port>
-                <storage.index.search.client-only>true</storage.index.search.client-only>
-                <storage.index.search.local-mode>false</storage.index.search.local-mode>
+                <!-- <index.search.backend>elasticsearch</index.search.backend>
+                <index.search.hostname>_ELASTICSEARCH_HOSTNAME_</index.search.hostname>
+                <index.search.port>_ELASTICSEARCH_TCP_PORT_</index.search.port>
+                <index.search.elasticsearch.client-only>false</index.search.elasticsearch.client-only>
+                <index.search.elasticsearch.local-mode>false</index.search.elasticsearch.local-mode>
+                -->
             </properties>
             <extensions>
                 <allows>

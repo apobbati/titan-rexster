@@ -10,7 +10,7 @@ RUN curl -o /opt/titan.zip http://s3.thinkaurelius.com/downloads/titan/titan-0.5
 RUN unzip /opt/titan.zip -d /opt/ && \
     rm /opt/titan.zip
 
-ENV VERSION 0.12
+ENV VERSION 0.27
 ADD rexster-custom.xml.template $TITAN_HOME/rexster-custom.xml.template
 ADD run.sh $TITAN_HOME/run.sh
 RUN chmod +x $TITAN_HOME/run.sh
