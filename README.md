@@ -14,7 +14,7 @@ Enter Docker. Now it is possible to run Titan and it's dependencies in separate 
 
 ## Titan
 
-This container is using Titan 0.5.0. Please refer to
+This container is using Titan 0.5.4. Please refer to
 its [page](https://github.com/thinkaurelius/titan/wiki/Downloads) for more information.
 
 ## Tinkerpop and Rexster
