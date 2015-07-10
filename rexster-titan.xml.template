@@ -94,21 +94,21 @@
             <graph-type>com.thinkaurelius.titan.tinkerpop.rexster.TitanGraphConfiguration</graph-type>
             <graph-read-only>false</graph-read-only>
             <properties>
-                <storage.backend>cassandrathrift</storage.backend> 
+                <storage.backend>cassandrathrift</storage.backend>
                 <storage.hostname>_CASSANDRA_HOSTNAME_</storage.hostname>
                 <storage.port>_CASSANDRA_TCP_PORT_</storage.port> <!-- Cassandra Thrift Port -->
                 <cache.db-cache>true</cache.db-cache>
                 <cache.db-cache-clean-wait>20</cache.db-cache-clean-wait>
-                <storage.index.search.backend>elasticsearch</storage.index.search.backend>
-                <storage.index.search.hostname>_ELASTICSEARCH_HOSTNAME_</storage.index.search.hostname>
-                <storage.index.search.port>_ELASTICSEARCH_TCP_PORT_</storage.index.search.port> <!-- ES REST Port -->
-                <storage.index.search.client-only>true</storage.index.search.client-only>
+                <index.search.backend>elasticsearch</index.search.backend>
+                <index.search.hostname>_ELASTICSEARCH_HOSTNAME_</index.search.hostname>
+                <index.search.port>_ELASTICSEARCH_TCP_PORT_</index.search.port> <!-- ES REST Port -->
+                <index.search.elasticsearch.interface>TRANSPORT_CLIENT</index.search.elasticsearch.interface>
             </properties>
             <extensions>
                 <allows>
                     <allow>tp:gremlin</allow>
                 </allows>
             </extensions>
-        </graph>    
+        </graph>
     </graphs>
 </rexster>
