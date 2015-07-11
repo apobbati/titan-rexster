@@ -38,8 +38,8 @@ elegance to query graphs.
 The minimum system requirements for this stack is 1 GB with 2 cores.
 
 ```
-docker run -d --name es1 itzg/elasticsearch
-docker run -d --name cs1 poklet/cassandra
+docker run -d --name es1 elasticsearch
+docker run -d --name cs1 cassandra
 docker run -d -P --name mytitan --link es1:elasticsearch --link cs1:cassandra apobbati/titan-rexster
 ```
 
@@ -63,8 +63,8 @@ curl http://localhost:<port-mapped-to-8182>/graphs/graph/vertices
 
 I've tested this container with the following containers:
 
-	- poklet/cassandra: This is the Cassandra Storage backend for Titan. It scales well for large datasets.
-	- itzg/elasticsearch: This is the ElasticSearch Indexing backend for Titan. It provides search
+	- cassandra: This is the Cassandra Storage backend for Titan. It scales well for large datasets.
+	- elasticsearch: This is the ElasticSearch Indexing backend for Titan. It provides search
 		capabilities for Titan graph datasets.
 
 ## Roadmap
